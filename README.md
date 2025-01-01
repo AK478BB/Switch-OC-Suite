@@ -1,119 +1,32 @@
-# Switch OC Suite
+# 【AK杂谈】一句“对屏幕硬件有不可逆的未知损坏可能性”引起的“故事”
 
-[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
-[![Downloads](https://img.shields.io/github/downloads/hanai3Bi/Switch-OC-Suite/total)](https://github.com/hanai3Bi/Switch-OC-Suite/releases)
+最近被国内知名的电玩游戏论坛禁言了一个月，AK先留个贴，把实际情况告知大家，虽然这件事起因也很简单。事情的起因，就是AK在日常逛论坛的时候看到这个贴
 
- 
-     
+当你switch还在玩60hz游戏的时候, 别人已经玩上90hz了
 
-한국어 : [Korean](https://github.com/hanai3Bi/Switch-OC-Suite/blob/master/README_kr.md)
+https://www.tekqart.com/thread-409912-1-1.html
 
-This project is very dangerous and can possibly damage your console. Therefore I do not recommend using this project. If you decide to use it, USE AT YOUR OWN RISK. THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND.
+这个贴设置隐藏，但是回复后也没什么内容，无非是fpslocker2.0.0开始提供刷高屏幕分辨率的功能，发帖人鼓励大家加群去参与测试，和底座模式转换插件一样，fpslocker也需要saltynx启动器支持。该插件的刷屏幕分辨率就是试验性功能，有对设备硬件未知不可逆的损坏和极限超频一样属于有可能存在破坏硬件的软件。
 
-Overclocking Suite for Nintendo Switch consoles running Atmosphere CFW.
+fpslocker开发者也在插件界面里提供了提醒
 
-[Project Homepage](https://hanai3Bi.github.io/Switch-OC-Suite)
+<img src="https://github.com/AK478BB/Switch-OC-Suite/blob/master/tekqart4.jpg">
 
-**DISCLAIMER: USE AT YOUR OWN RISK!**
+如果是tesla-menu，edizon，missioncontrol等对硬件毫无影响的插件，AK本来也不会说什么，只是对这个回了一嘴，也是提醒发帖人，结果引来一系列有组织的评论攻击。难道是挡着某些人的财路了？
 
-- Overclocking in general will shorten the lifespan of some hardware components. **YOU ARE RESPONSIBLE for any problem or potential damage** if unsafe frequencies are ENABLED in sys-clk-OC. Issues like asking for bypassing limit will BE IGNORED OR CLOSED WITHOUT REPLY.
+<img src="https://github.com/AK478BB/Switch-OC-Suite/blob/master/tekqart2.jpg">
 
-- Due to HorizonOS design, instabilities from unsafe RAM clocks may cause filesystem corruption. **Always make backup before enabling DRAM OC.**
+其实超频和极限超频并不是什么新鲜的玩意儿，和电脑超频一样，只是电脑的极限超频幅度跟不上电脑CPU和GPU的迭代更新速度。从Switch被破解后就可以通过插件解锁系统频率超频其实也是很正常的事情，没有那么神秘和可怕，AK只是认为超频插件和刷高分辨率是能够对主机硬件产生未知损坏的“软件”，仅此而已。相比Switch硬破焊接芯片，因为硬破焊接芯片是所有Switch破解的基础中的基础，目前也有非常稳定和廉价的改机方案，一次改好就没后续的麻烦。而超频插件和刷高分辨率确实属于可有可无。
 
-## Features
+以超频为例，普通超频软件，CPU=1785，GPU=921，MEM=1600，如果续航和OLED完全可以拉满，非续航和Lite注意GPU不要过高，建议614或默认，一般做法都是MEM=1600，根据每个游戏去动态调节CPU和GPU，配合锁帧插件实现稳定30帧或60帧，不同游戏对硬件的要求本来就有高低之分的，尤其是Switch第三方游戏特别明显，但这范围内的超频也仅仅伤点电池续航和温度过高影响散热而已。
 
-- Erista variant (HAC-001)
-  - CPU / GPU Overclock (Safe: 1785 / 921 MHz)
-    - Unsafe
-      - Due to the limit of board power draw or power IC
-      - Unlockable frequencies up to 2091 / 998 MHz
-      - See [README for sys-clk-OC](https://github.com/hanai3Bi/Switch-OC-Suite/blob/master/Source/sys-clk-OC/README.md)
+极限超频是通过atmosphere/kips/loader.kip解锁上限，这个loader.kip可以通过另编译突破上限，因大佬发布loader.kip是默认MEM=1996，这个参数对所有Switch内存品牌是不挑的（三星、镁光和海力士等），就是所谓的不挑型号体质的极限超频，所以是安全参数，Switch超频中的MEM超频是性价比最高的，小伙伴们应该都知道，接下来的极限超频就像电脑CPU和GPU的降压来实现CPU和GPU的更高频率的超频，同样针对某个游戏去动态调，细节不展开了，各种视频教程也挺多的。所以降压极限超频也并非Switch独有，无非是游走在硬件损坏的边缘，考虑到任天堂官方为了降低生产成本而使用非高品质的硬件，但又要减少主机的返修率，同时也考虑到续航和散热问题，所以官方锁频也正是有它的道理，后期Switch也是游戏开发层面的软件优化得以保证流畅不掉帧，所以大部分任天堂第一方游戏都比较流畅，除了少数近2年发售的大作如塞尔达传说2王国之泪。
 
-  - DRAM Overclock (Safe: 1862.4 MHz)
+至于某些极客的玩法，并不是没有，都是事实存在的，比如拆主机焊接更换Switch原有的内存品牌颗粒再使用极限超频突破MEM=2133的极限，但是AK只是认为这些所有的玩法和AK毫无关系，AK没资格，也懒得管，AK只是提醒小伙伴们在相对安全的范围内超频而已。
+而真正的极客或者技术大佬，会把自己的研究过程和成果，以通俗易懂的教程或报告，无偿分享给小伙伴们，同时AK相信他们也一定会做出相应的安全提醒，不会把新手往坑里带。而不是像某些所谓的“极客”或者“技术大佬”，只会发几张图写几句话，向小伙伴们装个逼，涉及到技术的要么半个字都不吐，要么说几句鬼才懂的术语，AK也瞧不起这群人。
 
-- Mariko variant (HAC-001-01, HDH-001, HEG-001)
-  - CPU / GPU Overclock (Safe: 1963 / 998 MHz)
-    - Unsafe
-      - Due to the limit of board power draw or power IC
-      - Unlockable frequencies up to 2295 / 1267 MHz
-      - See [README for sys-clk-OC](https://github.com/hanai3Bi/Switch-OC-Suite/blob/master/Source/sys-clk-OC/README.md)
+好了，事已至此，AK也接受论坛的管理结果，接受被禁言，以后AK也会吸取教训，注意言行，从2025年开始不再搭理这些破事了！
 
-  - DRAM Overclock (Safe: 1996.8 MHz)
+<img src="https://github.com/AK478BB/Switch-OC-Suite/blob/master/tekqart3.jpg">
 
-- Modded sys-clk
-  - Global Profile
-    - Designated a dummy title id `0xA111111111111111`.
-    - Priority: "Temp overrides" > "Application profile" > "Global profile" > "System default".
-  - Real Voltage readings (CPU/GPU/RAM)
-  - Bug Fixes
-
-- **[System Settings (Optional)](https://github.com/hanai3Bi/Switch-OC-Suite/blob/master/system_settings.md)**
-
-
-## Installation
-
-1. Download latest [release](https://github.com/hanai3Bi/Switch-OC-Suite/releases).
-
-2. Grab `x.x.x_loader.kip` for your Atmosphere version, rename it to `loader.kip` and place it in `/atmosphere/kips/`.
-
-3. (optional) You can customize via [online loader configurator](https://hanai3Bi.github.io/Switch-OC-Suite/#config):
-    <details>
-
-    | Defaults   | Mariko        | Erista        |
-    | ---------- | ------------- | ------------- |
-    | CPU OC     | 2295 MHz Max  | 2091 MHz Max  |
-    | CPU Volt   | 1235 mV       | 1235 mV       |
-    | GPU OC     | 1267 MHz Max  | 998 Mhz max   |
-    | RAM OC     | 1996 MHz      | 1862 MHz      |
-    | RAM Volt   | Disabled      | Disabled      |
-    | RAM Timing | Auto-Adjusted | Auto-Adjusted |
-    | CPU UV     | Disabled      | N/A           |
-    | GPU UV     | Disabled      | N/A           |
-
-    </details>
-
-4. Hekate-ipl bootloader (fss0) Only  (Not required for AMS fusee)
-   - At boot entry section in `bootloader/hekate_ipl.ini`, Add `kip1=atmosphere/kips/loader.kip` to any line that works.
-
-5. Install [sys-clk-oc](https://github.com/hanai3Bi/Switch-OC-Suite/releases/latest/download/sys-clk-oc.zip)
-   - official [sys-clk](https://github.com/retronx-team/sys-clk/releases) (2.0.0+) is compatible, but not recommended (no bugfixes or additional features).
-
-6. (optional) Copy SdOut.zip for useful utilities.
-
-## Updating via AIO
-
-1. Download and copy custom_packs.json to /config/aio-switch-updater/custom_packs.json
-
-2. Launch AIO Switch Updater and go to Custom Downloads tab
-
-3. Select Switch-OC-Suite and press Contiune 
-
-
-## Build
-
-<details>
-
-1. Copy Switch-OC-Suite files into Atmosphere folder. 
-
-2. Before compiling, run `patch.py` in `Atmosphere/stratosphere/loader/source/` to insert oc module into loader sysmodule.
-
-3. Compile Atmosphere loader with devkitpro.
-
-4. When compilation is done, uncompress the kip to make it work with configurator: `hactool -t kip1 Atmosphere/stratosphere/loader/out/nintendo_nx_arm64_armv8a/release/loader.kip --uncompress=./loader.kip`
-
-</details>
-
-
-## Acknowledgement
-
-- CTCaer for [Hekate-ipl](https://github.com/CTCaer/hekate) bootloader, RE and hardware research
-- [devkitPro](https://devkitpro.org/) for All-In-One homebrew toolchains
-- masagrator for [ReverseNX-RT](https://github.com/masagrator/ReverseNX-RT) and info on BatteryChargeInfoFields in psm module
-- Nvidia for [Tegra X1 Technical Reference Manual](https://developer.nvidia.com/embedded/dlc/tegra-x1-technical-reference-manual)
-- RetroNX team for [sys-clk](https://github.com/retronx-team/sys-clk)
-- SciresM and Reswitched Team for the state-of-the-art [Atmosphere](https://github.com/Atmosphere-NX/Atmosphere) CFW of Switch
-- Switchbrew [wiki](http://switchbrew.org/wiki/) for Switch in-depth info
-- Switchroot for their [modified L4T kernel and device tree](https://gitlab.com/switchroot/kernel)
-- ZatchyCatGames for RE and original OC loader patches for Atmosphere
-- KazushiMe for [Switch-OC-Suite](https://github.com/KazushiMe/Switch-OC-Suite)
-- lineon for research and help
+<img src="https://github.com/AK478BB/Switch-OC-Suite/blob/master/tekqart1.jpg">
